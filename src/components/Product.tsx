@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const products = [
@@ -7,6 +8,7 @@ const products = [
         imgSrc: "/images/cat-1.jpg",
         price: "$49.99",
         discount: "Save 10%",
+        href: "/"
     },
     {
         id: 2,
@@ -14,6 +16,7 @@ const products = [
         imgSrc: "/images/cat-1.jpg",
         price: "$49.99",
         discount: "Save 10%",
+        href: "/"
     },
     {
         id: 3,
@@ -21,6 +24,7 @@ const products = [
         imgSrc: "/images/cat-1.jpg",
         price: "$49.99",
         discount: "Save 10%",
+        href: "/"
     },
     {
         id: 4,
@@ -28,6 +32,7 @@ const products = [
         imgSrc: "/images/cat-1.jpg",
         price: "$49.99",
         discount: "Save 10%",
+        href: "/"
     },
     {
         id: 5,
@@ -35,6 +40,7 @@ const products = [
         imgSrc: "/images/cat-1.jpg",
         price: "$49.99",
         discount: "Save 10%",
+        href: "/"
     },
     {
         id: 6,
@@ -42,6 +48,7 @@ const products = [
         imgSrc: "/images/cat-1.jpg",
         price: "$49.99",
         discount: "Save 10%",
+        href: "/"
     },
     {
         id: 7,
@@ -49,6 +56,7 @@ const products = [
         imgSrc: "/images/cat-1.jpg",
         price: "$49.99",
         discount: "Save 10%",
+        href: "/"
     },
     {
         id: 8,
@@ -56,6 +64,7 @@ const products = [
         imgSrc: "/images/cat-1.jpg",
         price: "$49.99",
         discount: "Save 10%",
+        href: "/"
     },
 ];
 
@@ -66,12 +75,12 @@ export default function Product() {
                 Products
             </h1>
 
-            <div className="grid grid-cols-5 gap-10 max-w-[80vw] mx-auto hover:scale-105 transition-none duration-500">
+            <div className="grid grid-cols-5 gap-10 max-w-[80vw] mx-auto">
                 {products.map((product) => (
-                    <a
+                    <Link
                         key={product.id}
-                        href="#"
-                        className="relative block rounded-tr-3xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-none duration-300"
+                        href={product.href}
+                        className="relative block rounded-tr-3xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300"
                     >
                         <span className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-rose-600 px-6 py-4 font-medium uppercase tracking-widest text-white">
                             {product.discount}
@@ -95,7 +104,7 @@ export default function Product() {
                 Learn More
               </span> */}
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </section>

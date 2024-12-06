@@ -1,18 +1,17 @@
 import React from 'react'
-
 import { Button } from "@/components/ui/button"
-// import { Input } from "@/components/ui/input"
-// import { Label } from "@/components/ui/label"
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover"
+import Link from 'next/link'
 
 export function PopoverDemo() {
     return (
         <Popover>
-            <PopoverTrigger>
+
+            <PopoverTrigger asChild >
                 <Button className='bg-[#FBBF24] text-[#1E3A8A]  hover:bg-[#F59E0B] font-medium'>User Account</Button>
             </PopoverTrigger>
             <PopoverContent className="w-80">
@@ -26,7 +25,6 @@ export function PopoverDemo() {
                     <div className="grid gap-2 ">
                         <Button className='bg-[#2563EB] text-white px-4 py-2 rounded-md hover:bg-[#1E40AF]'>Sign-up</Button>
                         <Button className='bg-[#2563EB] text-white px-4 py-2 rounded-md hover:bg-[#1E40AF]'>Login</Button>
-
                     </div>
                 </div>
             </PopoverContent>
@@ -40,29 +38,23 @@ export default function Header() {
             <div className='flex items-center justify-around bg-[#8FC1E3] text-[#1E3A8A]  p-3'>
                 <ul className='flex justify-center items-center gap-4'>
                     <li className='hover:text-[#2563EB]'>
-                        <a href="/" >
+                        <Link href="/">
                             Home
-                        </a>
+                        </Link>
                     </li>
-
                     <li className='hover:text-[#2563EB]'>
-                        <a href="/" >
+                        <Link href="/">
                             Products
-                        </a>
+                        </Link>
                     </li>
-
                     <li className='hover:text-[#2563EB]'>
-                        <a href="/" >
+                        <Link href="/">
                             Categories
-                        </a>
+                        </Link>
                     </li>
                 </ul>
-
-
                 <PopoverDemo />
-
             </div>
-
         </section>
     )
 }
